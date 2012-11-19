@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="campaniainnovazione.contents">
+    <head>
+        <metal:block fill-slot="column_two_slot" />
+        <tal:js metal:fill-slot="javascript_head_slot">
+            <script type="text/javascript" src="jquery.youtubeplaylist.js"
+                    tal:attributes="src string:${context/portal_url}/++resource++abstract.youtubevideo.scripts/jquery.youtubeplaylist.js"></script>
+
+            <script type="text/ecmascript">
+                jq(function() {
+                    jq("#listing-multimedia ul.playlist").ytplaylist({addThumbs:true, autoPlay: false, holderId: 'ytvideo',playerWidth: '530',playerHeight: '350'});
+                });
+            </script>
+        </tal:js>
+    </head>
+<body>
+    <metal:fill fill-slot="main">
+     <metal:main-macro define-macro="main"
+          tal:define="kssClassesView context/@@kss_field_decorator_view;
+                        getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                        templateId string:isfol_multimedia_view;
+                        template_id templateId;
+                        videos view/getLinks;
+                        portal_url context/portal_url;
+                        limit_display limit_display|request/limit_display|nothing;
+                        limit_display python:limit_display and int(limit_display) or None;
+                        more_url more_url|request/more_url|string:folder_contents;
+                        Batch python:modules['Products.CMFPlone'].Batch;
+                        b_size python:limit_display or 8; b_start python:0;
+                        b_start request/b_start | b_start;
+                        batch python:isinstance(videos, Batch) and videos or Batch(videos, b_size, int(b_start), orphan=0);">
+
+        <div id="listing-multimedia">
+        <h1 tal:content="context/Title">Sezione multimediale</h1>
+
+        <div id="ytvideo">Seleziona un video, per poterlo visualizzare</div>
+        <ul class="playlist visualNoMarker">
+            <tal:loop tal:repeat="link batch">
+             <li tal:define="evenrow repeat/link/even;" tal:attributes="class python:evenrow and 'clear' or nothing">
+                 <a href="#" tal:attributes="href link/getRemoteUrl; title link/Description|link/Title" tal:content="link/Title">Video 1</a>
+             </li>
+            </tal:loop>
+        </ul>
+        <div class="visualClear"><!-- --></div>
+
+        <!-- Navigation -->
+        <tal:block condition="python:batch">
+          <div metal:use-macro="here/batch_macros/macros/navigation" />
+        </tal:block>
+
+    </div>
+    </metal:main-macro>
+    </metal:fill>
+
+</body>
+</html>

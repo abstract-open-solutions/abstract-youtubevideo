@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="abstract.youtubevideo">
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- Resource directory for js scripts -->
+  <browser:resourceDirectory
+      name="abstract.youtubevideo.scripts"
+      directory="scripts"
+      layer="..interfaces.IAbstractYouTubeContentsSpecific"
+  />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+      for="*"
+      name="multimedia_view"
+      permission="zope2.View"
+      class=".multimediaview.MultimediaView"
+      template="templates/multimediaview.pt"
+      menu="plone_displayviews"
+      title="Vista Gallery Multimedia"
+      layer="..interfaces.IAbstractYouTubeContentsSpecific"
+  />
+
+  <browser:page
+      for="..interfaces.IVideo"
+      name="video_view"
+      permission="zope2.View"
+      template="templates/video_view.pt"
+      menu="plone_displayviews"
+      title="Vista Video"
+      layer="..interfaces.IAbstractYouTubeContentsSpecific"
+  />
+
+</configure>

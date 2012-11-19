@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="campaniainnovazione.contents">
+    <head>
+        <tal:js metal:fill-slot="javascript_head_slot">
+            <script type="text/javascript" src="jquery.youtubeplaylist.js"
+                    tal:attributes="src string:${context/portal_url}/++resource++abstract.youtubevideo.scripts/jquery.youtubeplaylist.js"></script>
+
+            <script type="text/ecmascript">
+                jq(function() {
+                    jq("#listing-multimedia ul.playlist").ytplaylist({addThumbs:true, autoPlay: false, holderId: 'ytvideo_view',playerWidth: '430',playerHeight: '300'});
+                });
+            </script>
+        </tal:js>
+    </head>
+<body>
+    <metal:fill fill-slot="main">
+     <metal:main-macro define-macro="main"
+          tal:define="kssClassesView context/@@kss_field_decorator_view;
+                        getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                        templateId string:isfol_multimedia_view;
+                        template_id templateId;">
+
+        <div id="listing-multimedia">
+        <h1 tal:content="context/Title">Sezione multimediale</h1>
+        <div id="ytvideo_view" tal:content="here/Description">video non visualizzabile</div>
+        <p class="documentDescription video_description" tal:content="here/Description"/>
+        <ul class="playlist visualNoMarker hiddenStructure">
+             <li>
+                 <a href="#" tal:attributes="href context/getRemoteUrl" tal:content="context/Title">Video 1</a>
+             </li>
+        </ul>
+        <div class="visualClear"><!-- --></div>
+
+    </div>
+    </metal:main-macro>
+    </metal:fill>
+
+</body>
+</html>
