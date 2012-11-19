@@ -1,0 +1,50 @@
+<tal:block tal:define="showVideo view/showVideo; css_id view/css_id; showPlayer view/showPlayer; attributeVideoURL view/attributeVideoURL;">
+    <script type="text/javascript" src="jquery.youtubeplaylist.js"
+                    tal:attributes="src string:${context/portal_url}/++resource++abstract.youtubevideo.scripts/jquery.youtubeplaylist.js"></script>
+
+    <tal:block tal:replace="structure string:
+        &lt;script type='text/ecmascript'&gt;
+        &lt;!--
+            $(function() {
+                $('.portletYouTubePlaylist.$css_id ul.playlist').ytplaylist({addThumbs:true, autoPlay: false, holderId: '$css_id',playerWidth: '420', showPlayer: $showPlayer, videolinkattribute: '$attributeVideoURL'});
+            });
+        --&gt;
+        &lt;/script&gt;
+    " />
+
+<dl class="portlet portletYouTubePlaylist" i18n:domain="abstract.youtubevideo" tal:define="plone_view context/@@plone; target view/getTarget" tal:attributes="class string:portlet portletYouTubePlaylist $css_id">
+    <dt class="portletHeader">
+         <span tal:content="view/data/header">Sezione Multimediale</span>
+    </dt>
+    <dd class="portletItem" tal:attributes="class python:showVideo and 'portletItem' or 'portletItem thumbnails'"
+        tal:define="show_video view/data/showVideo">
+        <div class="video-container">
+            <div id="ytvideo2" class="player" tal:attributes="id css_id" tal:condition="show_video">Seleziona un video, per poterlo visualizzare</div>
+        </div>
+        <ul class="playlist visualNoMarker">
+            <tal:loop tal:repeat="link view/getLinks">
+                <li tal:define="last repeat/link/end" tal:attributes="class python:last and 'last' or nothing">
+                    <a href="#"
+                       tal:attributes="href link/getRemoteUrl; title link/Description"
+                       tal:content="link/Title"
+                       tal:condition="show_video">
+                        Video 1
+                    </a>
+                    <a href="#"
+                       tal:attributes="rel link/getRemoteUrl; href link/getURL; title link/Description"
+                       tal:content="python:plone_view.cropText(link.Title, 35)"
+                       tal:condition="not:show_video">
+                        Video 1
+                    </a>
+                </li>
+            </tal:loop>
+         </ul>
+         <div class="visualClear"><!-- --></div>
+    </dd>
+    <dd class="portletFooter" tal:condition="python:target">
+           <div class="portletItemDetails">
+            <a tal:attributes="href target/absolute_url" tal:content="view/data/footer">Vai alla gallery</a>
+        </div>
+    </dd>
+</dl>
+</tal:block>

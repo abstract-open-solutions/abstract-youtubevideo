@@ -8,5 +8,12 @@
   <include package="plone.app.portlets" />
 
 	<!-- -*- extra stuff goes here -*- -->
-
+    <plone:portlet
+      name="abstract.youtubevideo.YouTubePlayListPortlet"
+      interface=".youtubeplaylist_portlet.IYouTubePortlet"
+      assignment=".youtubeplaylist_portlet.Assignment"
+      renderer=".youtubeplaylist_portlet.Renderer"
+      addview=".youtubeplaylist_portlet.AddForm"
+      editview=".youtubeplaylist_portlet.EditForm"
+    />
 </configure>
