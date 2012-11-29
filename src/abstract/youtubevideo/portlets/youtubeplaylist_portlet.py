@@ -89,7 +89,7 @@ class Assignment(base.Assignment):
         """This property is used to give the title of the portlet in the
         "manage portlets" screen.
         """
-        return "ISFOL: YouTube Playlist Portlet - %s" % (self.header)
+        return "Vivara: YouTube Playlist Portlet - %s" % (self.header)
 
 
 class Renderer(base.Renderer):
