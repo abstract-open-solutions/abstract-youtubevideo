@@ -153,6 +153,9 @@ class Renderer(base.Renderer):
             else:
                 links = target.queryCatalog()
 
+            if isinstance(links, list):
+                links = list(links)
+
             if not randomOrder:
                 return links[:count]
 
