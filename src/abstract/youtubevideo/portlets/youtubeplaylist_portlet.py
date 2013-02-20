@@ -153,7 +153,7 @@ class Renderer(base.Renderer):
             else:
                 links = target.queryCatalog()
 
-            if isinstance(links, list):
+            if not isinstance(links, list):
                 links = list(links)
 
             if not randomOrder:
