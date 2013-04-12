@@ -3,7 +3,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="campaniainnovazione.contents">
+      i18n:domain="abstract.youtubevideo">
     <head>
         <metal:block fill-slot="column_two_slot" />
         <tal:js metal:fill-slot="javascript_head_slot">
