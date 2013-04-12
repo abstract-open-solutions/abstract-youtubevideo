@@ -19,7 +19,9 @@
     <dd class="portletItem" tal:attributes="class python:showVideo and 'portletItem' or 'portletItem thumbnails'"
         tal:define="show_video view/data/showVideo">
         <div class="video-container">
-            <div id="ytvideo2" class="player" tal:attributes="id css_id" tal:condition="show_video">Seleziona un video, per poterlo visualizzare</div>
+            <div id="ytvideo2" class="player" tal:attributes="id css_id" tal:condition="show_video"
+                i18n:translate=""
+                i18n:domain="abstract.youtubevideo">Seleziona un video, per poterlo visualizzare</div>
         </div>
         <ul class="playlist visualNoMarker">
             <tal:loop tal:repeat="link view/getLinks">

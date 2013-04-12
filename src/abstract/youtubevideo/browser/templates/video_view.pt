@@ -26,7 +26,8 @@
 
         <div id="listing-multimedia">
         <h1 tal:content="context/Title">Sezione multimediale</h1>
-        <div id="ytvideo_view" tal:content="here/Description">video non visualizzabile</div>
+        <div id="ytvideo_view" tal:content="here/Description"
+            i18n:translate="">video non visualizzabile</div>
         <p class="documentDescription video_description" tal:content="here/Description"/>
         <ul class="playlist visualNoMarker hiddenStructure">
              <li>

@@ -37,7 +37,8 @@
         <div id="listing-multimedia">
         <h1 tal:content="context/Title">Sezione multimediale</h1>
 
-        <div id="ytvideo">Seleziona un video, per poterlo visualizzare</div>
+        <div id="ytvideo"
+            i18n:translate="">Seleziona un video, per poterlo visualizzare</div>
         <ul class="playlist visualNoMarker">
             <tal:loop tal:repeat="link batch">
              <li tal:define="evenrow repeat/link/even;" tal:attributes="class python:evenrow and 'clear' or nothing">

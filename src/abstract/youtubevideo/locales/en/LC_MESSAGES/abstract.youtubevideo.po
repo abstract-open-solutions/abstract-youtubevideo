@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: abstract.youtubevideo\n"
+
+#: ../portlets/youtubeplaylist_portlet.py:203
+msgid "Add YouTube Playlist Portlet"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:217
+msgid "Edit YouTube Playlist Portlet"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:56
+msgid "Footer of the rendered portlet"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:31
+msgid "How many items to list."
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:43
+msgid "Mostra il Player"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:35
+msgid "Nome della sorgente"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:30
+msgid "Number of items to display"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:49
+msgid "Ordinamento Casuale"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:55
+msgid "Portlet footer"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:26
+msgid "Portlet header"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:36
+msgid "Ricerca della sorgente dati (cartella o collezione)"
+msgstr ""
+
+#: ../portlets/youtubeplaylist_portlet.py:44
+msgid "Se attivo visualizza il player"
+msgstr ""
+
+#: ../browser/templates/multimediaview.pt:40
+#: ../portlets/youtubeplaylist_portlet.pt:22
+msgid "Seleziona un video, per poterlo visualizzare"
+msgstr "Select a video to show it"
+
+#: ../portlets/youtubeplaylist_portlet.py:27
+msgid "Title of the rendered portlet"
+msgstr ""
+
+#: ../content/video.py:15
+msgid "Usato nell'elenco degli elementi e nei risultati delle ricerche.<br/>Accessibilita': descrizione alternativa del contenuto."
+msgstr ""
+
+#: ../profiles/default/types/Video.xml
+msgid "Video"
+msgstr ""
+
+#: ../profiles/default/types/Video.xml
+msgid "YouTube Link Video"
+msgstr ""
+
