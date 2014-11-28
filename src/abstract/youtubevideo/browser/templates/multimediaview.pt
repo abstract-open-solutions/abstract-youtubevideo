@@ -18,8 +18,8 @@
         </tal:js>
     </head>
 <body>
-    <metal:fill fill-slot="main">
-     <metal:main-macro define-macro="main"
+    <metal:fill fill-slot="content-core">
+     <metal:main-macro define-macro="content-core"
           tal:define="kssClassesView context/@@kss_field_decorator_view;
                         getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                         templateId string:isfol_multimedia_view;
@@ -35,7 +35,6 @@
                         batch python:isinstance(videos, Batch) and videos or Batch(videos, b_size, int(b_start), orphan=0);">
 
         <div id="listing-multimedia">
-        <h1 tal:content="context/Title">Sezione multimediale</h1>
 
         <div id="ytvideo"
             i18n:translate="">Seleziona un video, per poterlo visualizzare</div>
