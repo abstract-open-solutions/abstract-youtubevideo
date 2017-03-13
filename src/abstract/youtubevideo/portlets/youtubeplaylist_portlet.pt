@@ -14,7 +14,9 @@
 
 <dl class="portlet portletYouTubePlaylist" i18n:domain="abstract.youtubevideo" tal:define="plone_view context/@@plone; target view/getTarget" tal:attributes="class string:portlet portletYouTubePlaylist $css_id">
     <dt class="portletHeader">
-         <span tal:content="view/data/header">Sezione Multimediale</span>
+        <a tal:omit-tag="python:not target" tal:attributes="href target/absolute_url">
+          <span tal:content="view/data/header">Sezione Multimediale</span>
+        </a>
     </dt>
     <dd class="portletItem" tal:attributes="class python:showVideo and 'portletItem' or 'portletItem thumbnails'"
         tal:define="show_video view/data/showVideo">
