@@ -65,7 +65,7 @@ jQuery.fn.ytplaylist = function(options) {
             function play(id, description)
             {
                description = description ? description : 'No flash';
-               var iframe = $('<iframe src="http://www.youtube.com/embed/'+id+'" frameborder="0" allowfullscreen></iframe>');
+               var iframe = $('<iframe src="http://www.youtube.com/embed/'+id+'?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
                $('#'+options.holderId).html(iframe);
             };
 
